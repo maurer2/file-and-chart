@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <template v-for="tableColumn in tableColumns">
-          <th :key="tableColumn">{{ tableColumn }}</th>
+          <th :key="tableColumn">{{ tableColumn | capitalizeFirstLetter }}</th>
         </template>
       </tr>
     </thead>
@@ -48,13 +48,20 @@ export default {
       return keysUnique;
     }
   },
-  methods: {}
+  filters: {
+    capitalizeFirstLetter(newString) {
+      if (newString == undefined || newString.length === 0) {
+        return '';
+      }
+
+      return `${newString.charAt(0).toUpperCase()}${newString.slice(1)}`;
+    }
+  },
 };
 </script>
 
 <style scoped lang="scss">
 .table {
-  margin: auto;
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
