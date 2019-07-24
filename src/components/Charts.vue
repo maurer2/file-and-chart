@@ -1,15 +1,12 @@
 <template>
   <div class="charts">
-    <h2>Charts</h2>
-    <div class="wrapper">
-      <div class="chart-container">
-        <h3>Bar chart</h3>
-        <canvas ref="barchart" />
-      </div>
-      <div class="chart-container">
-        <h3>Circle chart</h3>
-        <canvas ref="circlechart" />
-      </div>
+    <div class="chart-container">
+      <h3>Bar chart</h3>
+      <canvas ref="barchart" />
+    </div>
+    <div class="chart-container">
+      <h3>Circle chart</h3>
+      <canvas ref="circlechart" />
     </div>
   </div>
 </template>
@@ -48,6 +45,9 @@ export default {
           legend: {
             display: false
           },
+          tooltips: {
+            enabled: false
+          },
         },
         data: {
           datasets: [{
@@ -67,6 +67,9 @@ export default {
           cutoutPercentage: 40,
           legend: {
             display: false,
+          },
+          tooltips: {
+            enabled: true
           },
         },
         data: {
@@ -88,8 +91,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.wrapper {
+<style lang="scss" scoped>
+.charts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

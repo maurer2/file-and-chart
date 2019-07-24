@@ -1,12 +1,13 @@
 <template>
-  <div class="table">
-    <h2>Table</h2>
-    <table class="data-table">
+  <table class="table">
+    <thead>
       <tr>
         <template v-for="tableColumn in tableColumns">
           <th :key="tableColumn">{{ tableColumn }}</th>
         </template>
       </tr>
+    </thead>
+    <tbody>
       <tr v-for="row in numberOfRows" :key="'row-' + row">
         <template v-for="tableColumn in tableColumns">
           <td :key="tableColumn">
@@ -14,8 +15,8 @@
           </td>
         </template>
       </tr>
-    </table>
-  </div>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -52,7 +53,33 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.data-table {
+.table {
   margin: auto;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid black;
+
+  thead tr {
+    &:nth-child(odd) {
+      background: whitesmoke;
+    }
+  }
+
+  tbody tr {
+    &:nth-child(even) {
+      background: whitesmoke;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    border-left: 1px solid black;
+  }
+
+  td {
+    border-top: 1px solid black;
+  }
 }
 </style>

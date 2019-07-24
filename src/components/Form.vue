@@ -1,8 +1,13 @@
 <template>
-  <form class="form" action="" method="">
-    <h2>Form</h2>
-    <label for="field">Upload file:</label>
-    <input type="file" name="field" id="field" @change="handleChangeEvent" />
+  <form class="form" action="/" method="post">
+    <label class="label" for="field">Upload a CSV-file</label>
+    <input
+      class="field"
+      type="file"
+      name="field"
+      id="field"
+      @change="handleChangeEvent"
+    />
   </form>
 </template>
 
@@ -12,7 +17,7 @@ export default {
   props: {},
   data() {
     return {
-      uploadedData: '',
+      test: ''
     }
   },
   methods: {
@@ -31,8 +36,6 @@ export default {
       fileReader.onload = (event) => {
         const results = fileReader.result;
 
-        this.uploadedData = results;
-
         this.$emit('fileUpload', results);
       };
 
@@ -44,7 +47,20 @@ export default {
 
 <style scoped lang="scss">
 .form {
-  padding: 1rem;
+  position: relative;
+  padding: 0;
+}
 
+.label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: whitesmoke;
+  border: 1px solid black;
+}
+
+.field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0.01;
 }
 </style>
