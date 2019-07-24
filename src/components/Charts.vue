@@ -1,10 +1,16 @@
 <template>
-  <div class="chart">
+  <div class="charts">
     <h2>Charts</h2>
-
-    <pre>{{ chartLabels }}</pre>
-    <h3>Bar chart</h3>
-    <canvas ref="barchart" />
+    <div class="wrapper">
+      <div class="chart-container">
+        <h3>Bar chart</h3>
+        <canvas ref="barchart" />
+      </div>
+      <div class="chart-container">
+        <h3>Circle chart</h3>
+        <canvas ref="circlechart" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,6 +24,8 @@ export default {
   },
   data() {
     return {
+      barChart: undefined,
+      circleChart: undefined,
     }
   },
   computed: {
@@ -32,28 +40,66 @@ export default {
       return age;
     }
   },
-  methods: {},
-  mounted() {
-    const barChart = new Chart(this.$refs.barchart, {
-      type: 'horizontalBar',
-      options: {
-        legend: {
-          display: false
+  methods: {
+    createBarChart() {
+      this.barChart = new Chart(this.$refs.barchart, {
+        type: 'horizontalBar',
+        options: {
+          legend: {
+            display: false
+          },
         },
-      },
-      data: {
-        datasets: [{
-          label: 'Cat ages',
-          type: 'horizontalBar',
-          data: this.chartValues,
-        }],
-        labels: this.chartLabels,
-      },
-    });
+        data: {
+          datasets: [{
+            label: 'Cat ages',
+            type: 'horizontalBar',
+            data: this.chartValues,
+            hoverBorderColor: 'red',
+          }],
+          labels: this.chartLabels,
+        },
+      });
+    },
+    createCircleChart() {
+      this.circleChart = new Chart(this.$refs.circlechart, {
+        type: 'doughnut',
+        options: {
+          cutoutPercentage: 40,
+          legend: {
+            display: false,
+          },
+        },
+        data: {
+          datasets: [{
+            label: 'Cat ages',
+            type: 'doughnut',
+            data: this.chartValues,
+            hoverBorderColor: 'red',
+          }],
+          labels: this.chartLabels,
+        },
+      });
+    }
+  },
+  mounted() {
+    this.createBarChart();
+    this.createCircleChart();
   }
 };
 </script>
 
 <style scoped lang="scss">
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart-container {
+  position: relative;
+  flex-basis: 480px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
 
 </style>
