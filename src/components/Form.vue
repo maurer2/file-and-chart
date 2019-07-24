@@ -1,11 +1,8 @@
 <template>
   <form class="form" action="" method="">
+    <h2>Form</h2>
     <label for="field">Upload file:</label>
     <input type="file" name="field" id="field" @change="handleChangeEvent" />
-
-    <template v-if="uploadedData.length > 0">
-      <pre>{{ uploadedData }}</pre>
-    </template>
   </form>
 </template>
 
@@ -35,6 +32,8 @@ export default {
         const results = fileReader.result;
 
         this.uploadedData = results;
+
+        this.$emit('fileUpload', results);
       };
 
       fileReader.readAsText(file);
