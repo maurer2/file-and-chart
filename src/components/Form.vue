@@ -3,8 +3,8 @@
     <label for="field">Upload file:</label>
     <input type="file" name="field" id="field" @change="handleChangeEvent" />
 
-    <template v-if="uploadedJSON.length > 0">
-      <pre>{{ uploadedJSON }}</pre>
+    <template v-if="uploadedData.length > 0">
+      <pre>{{ uploadedData }}</pre>
     </template>
   </form>
 </template>
@@ -15,27 +15,26 @@ export default {
   props: {},
   data() {
     return {
-      uploadedJSON: {},
+      uploadedData: '',
     }
   },
   methods: {
     handleChangeEvent(event) {
       const [file] = event.target.files;
 
-      if (file.type !== 'application/json') {
+      if (file.type !== 'text/csv') {
         return;
       }
 
-      this.parseJsonFromFile(file);
+      this.getFileContent(file);
     },
-    parseJsonFromFile(file) {
+    getFileContent(file) {
       const fileReader = new FileReader();
 
       fileReader.onload = (event) => {
         const results = fileReader.result;
-        const parsedResults = JSON.parse(results);
 
-        this.uploadedJSON = parsedResults;
+        this.uploadedData = results;
       };
 
       fileReader.readAsText(file);
