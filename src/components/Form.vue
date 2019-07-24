@@ -45,6 +45,6 @@ export default {
 <style scoped lang="scss">
 .form {
   padding: 1rem;
-  border: 1px solid black;
+
 }
 </style>

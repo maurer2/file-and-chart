@@ -1,7 +1,7 @@
 <template>
   <div class="table">
     <h2>Table</h2>
-    <table class="table">
+    <table class="data-table">
       <tr>
         <template v-for="tableColumn in tableColumns">
           <th :key="tableColumn">{{ tableColumn }}</th>
@@ -40,22 +40,19 @@ export default {
       return largestNumberOfEntries;
     },
     tableColumns() {
-      const entryKeysUnique = this.tableData
-        .map((tableRow) => Object.keys(tableRow))
-        .flat()
-        .filter((key, index, entryKeysWithDuplicates) => entryKeysWithDuplicates.indexOf(key) === index);
+      const keysUnique = this.tableData
+        .flatMap((tableRow) => Object.keys(tableRow))
+        .filter((key, index, keysWithDuplicates) => keysWithDuplicates.indexOf(key) === index);
 
-      return entryKeysUnique;
+      return keysUnique;
     }
   },
-  methods: {
-    getTd(content, fieldName) {
-      console.log('dqwdqw', content.name);
-    }
-  }
+  methods: {}
 };
 </script>
 
 <style scoped lang="scss">
-
+.data-table {
+  margin: auto;
+}
 </style>

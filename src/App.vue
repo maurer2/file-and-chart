@@ -1,21 +1,23 @@
 <template>
   <div id="app">
+    <h1>Headline</h1>
+
     <Form @fileUpload='handleFormChange' />
 
     <template v-if="inputData.length > 0">
-      <h1>Debug</h1>
-      {{ inputData }}
       <Table :tableData="inputData" />
+      <Charts :chartData="inputData" />
     </template>
 
   </div>
 </template>
 
 <script>
-import * as d3 from 'd3';
+import { csvParse } from 'd3';
 
 import Form from './components/Form.vue';
 import Table from './components/Table.vue';
+import Charts from './components/Charts.vue';
 
 export default {
   name: 'app',
@@ -27,15 +29,17 @@ export default {
   components: {
     Form,
     Table,
+    Charts,
   },
   methods: {
     handleFormChange(inputData) {
-      const inputParsed = d3.csvParse(inputData);
+      const inputParsed = csvParse(inputData);
 
       this.inputData = inputParsed;
     }
-  }
+  },
 };
+
 </script>
 
 <style lang="scss">
