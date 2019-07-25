@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Table snapshot 1`] = `
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Age
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Bob
+      </td>
+      <td>
+        15
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Boots
+      </td>
+      <td>
+        21
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Cat
+      </td>
+      <td>
+        32
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Felix
+      </td>
+      <td>
+        44
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Garfield
+      </td>
+      <td>
+        51
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

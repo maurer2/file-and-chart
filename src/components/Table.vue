@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { flatten } from 'lodash-es';
+import flatten from 'lodash/flatten';
 
 export default {
   name: 'Table',

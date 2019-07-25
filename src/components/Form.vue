@@ -25,12 +25,15 @@ import dogsCSV from '../../csv/dogs.csv';
 
 export default {
   name: 'Form',
-  props: {},
   methods: {
     handleChangeEvent(event) {
+      if (event.target === null || event.target.files === null) {
+        return;
+      }
+
       const [file] = event.target.files;
 
-      if (file.type !== 'text/csv') {
+      if (file === undefined || file.type !== 'text/csv') {
         return;
       }
 
