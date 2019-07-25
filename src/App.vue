@@ -13,7 +13,7 @@
 
     <section class="section" v-if="showTable">
       <h2 class="subtitle">
-        Data table
+        Data-table
       </h2>
       <Table :tableData="inputData" />
     </section>

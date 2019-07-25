@@ -39,11 +39,6 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      activeEntry: '',
-    };
-  },
   computed: {
     numberOfRows() {
       return this.tableData.length;

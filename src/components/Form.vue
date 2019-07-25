@@ -8,8 +8,7 @@
       id="field"
       @change="handleChangeEvent"
     >
-    <div class="buttons">
-      <h3>Test CSVs</h3>
+    <div class="button-group">
       <button class="button" type="button" @click="openCatsCSV">
         Cats
       </button>
@@ -68,7 +67,7 @@ export default {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: whitesmoke;
-  border: 1px solid black;
+  border: 1px solid #d8d8d8;
 }
 
 // hide field visually
@@ -77,4 +76,17 @@ export default {
   left: -9999px;
   opacity: 0.01;
 }
+
+.button-group {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.button {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: whitesmoke;
+}
+
 </style>

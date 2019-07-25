@@ -43,6 +43,9 @@ export default {
   watch: {
     // watch for prop-change
     chartData() {
+      this.barChart.destroy();
+      this.circleChart.destroy();
+
       this.createBarChart();
       this.createCircleChart();
     },
@@ -62,13 +65,22 @@ export default {
           tooltips: {
             enabled: false,
           },
+          scales: {
+            yAxes: [{
+              ticks: {
+                fontSize: 13,
+              },
+            }],
+          },
         },
         data: {
           datasets: [{
             label: 'Cat ages',
             type: 'horizontalBar',
             data: this.chartValues,
-            hoverBorderColor: 'red',
+            backgroundColor: 'whitesmoke',
+            hoverBorderColor: 'black',
+            hoverBackgroundColor: 'black',
           }],
           labels: this.chartLabels,
         },
@@ -91,7 +103,9 @@ export default {
             label: 'Cat ages',
             type: 'doughnut',
             data: this.chartValues,
-            hoverBorderColor: 'red',
+            backgroundColor: 'whitesmoke',
+            hoverBorderColor: 'black',
+            hoverBackgroundColor: 'black',
           }],
           labels: this.chartLabels,
         },
