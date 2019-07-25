@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import catsCSV from 'raw-loader!../../csv/cats.csv';
-import dogsCSV from 'raw-loader!../../csv/dogs.csv';
+import catsCSV from '../../csv/cats.csv';
+import dogsCSV from '../../csv/dogs.csv';
 
 export default {
   name: 'Form',
