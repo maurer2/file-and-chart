@@ -34,12 +34,14 @@ export default {
     numberOfRows() {
       return this.tableData.length;
     },
+    /*
     numberOfColumns() {
       const fieldsEachEntry = this.tableData.map((tableRow) => Object.keys(tableRow).length);
       const largestNumberOfEntries = Math.max.apply(null, fieldsEachEntry);
 
       return largestNumberOfEntries;
     },
+    */
     tableColumns() {
       const keysUnique = this.tableData
         .flatMap((tableRow) => Object.keys(tableRow))

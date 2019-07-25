@@ -58,6 +58,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~normalize.css' ;
+
 html {
   box-sizing: border-box;
   font-size: 16px;

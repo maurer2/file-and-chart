@@ -8,10 +8,18 @@
       id="field"
       @change="handleChangeEvent"
     />
+    <div class="buttons">
+      <h3>Open Test CSVs</h3>
+      <button class="button" type="button" @click="openCatsCSV">
+        Cats
+      </button>
+    </div>
   </form>
 </template>
 
 <script>
+import catsCSV from 'raw-loader!../../csv/cats.csv';
+
 export default {
   name: 'Form',
   props: {},
@@ -40,6 +48,9 @@ export default {
       };
 
       fileReader.readAsText(file);
+    },
+    openCatsCSV(){
+      this.$emit('fileUpload', catsCSV);
     }
   },
 };
@@ -58,6 +69,7 @@ export default {
   border: 1px solid black;
 }
 
+// hide field visually
 .field {
   position: absolute;
   left: -9999px;
