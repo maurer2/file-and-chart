@@ -2,11 +2,11 @@
   <div class="charts">
     <div class="chart-container">
       <h3>Bar chart</h3>
-      <canvas ref="barchart" />
+      <canvas class="barchart" ref="barchart" />
     </div>
     <div class="chart-container">
       <h3>Circle chart</h3>
-      <canvas ref="circlechart" />
+      <canvas class="circlechart" ref="circlechart" />
     </div>
   </div>
 </template>

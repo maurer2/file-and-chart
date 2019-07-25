@@ -37,7 +37,7 @@ describe('Form', () => {
 
   test('Form field id is the same as label for attribute', () => {
     const fieldId = wrapper.find('.field').attributes('id');
-    
+
     expect(wrapper.find('.label').attributes('for')).toBe(fieldId);
   });
 
@@ -50,20 +50,20 @@ describe('Form', () => {
 
   test('Form field handleChangeEvent calls getFileContent when correct file is set', () => {
     wrapper.setMethods({ getFileContent: mockedGetFileContent });
-    
+
     wrapper.vm.handleChangeEvent(new Event('change'));
     expect(mockedGetFileContent).not.toBeCalled();
   });
 
   test.skip('Form getFileContent emits event when correct file is uploaded', (done) => {
-    const testBlob = new Blob(['cat'], { type : 'text/plain' });
+    const testBlob = new Blob(['cat'], { type: 'text/plain' });
 
     wrapper.vm.getFileContent(testBlob);
 
     wrapper.vm.$nextTick(() => {
       expect(wrapper.emitted('fileUpload')).toBeTruthy();
       done();
-    })
+    });
   });
 
   test('Form openCatsCSV emits event', () => {
@@ -77,5 +77,4 @@ describe('Form', () => {
 
     expect(wrapper.emitted('fileUpload')).toBeTruthy();
   });
-
 });

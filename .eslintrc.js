@@ -5,6 +5,7 @@ module.exports = {
   parser: 'vue-eslint-parser',
   env: {
     browser: true,
+    jest: true,
   },
   extends: [
     'airbnb-base',
