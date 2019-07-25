@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import { flatten } from 'lodash-es';
+
 export default {
   name: 'Table',
   filters: {
@@ -52,9 +54,9 @@ export default {
     },
     */
     tableColumns() {
-      const keysUnique = this.tableData
-        .flatMap(tableRow => Object.keys(tableRow))
-        .filter((key, index, keysWithDuplicates) => keysWithDuplicates.indexOf(key) === index);
+      const keysUniqueNested = this.tableData.map(tableRow => Object.keys(tableRow));
+      const keysUniqueFlat = flatten(keysUniqueNested);
+      const keysUnique = keysUniqueFlat.filter((key, index, keysWithDuplicates) => keysWithDuplicates.indexOf(key) === index);
 
       return keysUnique;
     },
