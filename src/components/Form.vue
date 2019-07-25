@@ -7,11 +7,15 @@
       name="field"
       id="field"
       @change="handleChangeEvent"
-    />
+    >
     <div class="buttons">
       <h3>Test CSVs</h3>
-      <button class="button" type="button" @click="openCatsCSV">Cats</button>
-      <button class="button" type="button" @click="openDogsCSV">Dogs</button>
+      <button class="button" type="button" @click="openCatsCSV">
+        Cats
+      </button>
+      <button class="button" type="button" @click="openDogsCSV">
+        Dogs
+      </button>
     </div>
   </form>
 </template>
@@ -36,7 +40,7 @@ export default {
     getFileContent(file) {
       const fileReader = new FileReader();
 
-      fileReader.onload = (event) => {
+      fileReader.onload = () => {
         const results = fileReader.result;
 
         this.$emit('fileUpload', results);
@@ -44,10 +48,10 @@ export default {
 
       fileReader.readAsText(file);
     },
-    openCatsCSV(){
+    openCatsCSV() {
       this.$emit('fileUpload', catsCSV);
     },
-    openDogsCSV(){
+    openDogsCSV() {
       this.$emit('fileUpload', dogsCSV);
     },
   },

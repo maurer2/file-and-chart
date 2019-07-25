@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <h1 class="title">File-and-chart</h1>
+    <h1 class="title">
+      File-and-chart
+    </h1>
 
     <section class="section">
-      <h2 class="subtitle">File input</h2>
-      <Form @fileUpload='handleFormChange' />
+      <h2 class="subtitle">
+        File input
+      </h2>
+      <Form @fileUpload="handleFormChange" />
     </section>
 
     <section class="section" v-if="showTable">
-      <h2 class="subtitle">Data table</h2>
+      <h2 class="subtitle">
+        Data table
+      </h2>
       <Table :tableData="inputData" />
     </section>
 
     <section class="section" v-if="showCharts">
-      <h2 class="subtitle">Charts</h2>
+      <h2 class="subtitle">
+        Charts
+      </h2>
       <Charts :chartData="inputData" />
     </section>
   </div>
@@ -27,16 +35,16 @@ import Table from './components/Table.vue';
 import Charts from './components/Charts.vue';
 
 export default {
-  name: 'app',
-  data() {
-    return {
-      inputData: [],
-    }
-  },
+  name: 'App',
   components: {
     Form,
     Table,
     Charts,
+  },
+  data() {
+    return {
+      inputData: [],
+    };
   },
   computed: {
     showTable() {
@@ -44,14 +52,14 @@ export default {
     },
     showCharts() {
       return this.inputData.length > 0;
-    }
+    },
   },
   methods: {
     handleFormChange(inputData) {
       const inputParsed = csvParse(inputData);
 
       this.inputData = inputParsed;
-    }
+    },
   },
 };
 
@@ -74,7 +82,8 @@ html {
 body {
   margin: 0;
   padding: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

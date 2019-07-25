@@ -6,14 +6,16 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "lint:fix": "eslint ./src/ --fix --ext .vue,.js,",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "d3": "^5.9.7",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
     "normalize.css": "^8.0.1",
-    "papaparse": "^5.0.1",
     "raw-loader": "^3.1.0",
     "vue": "^2.6.10"
   },
@@ -28,9 +30,10 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue": "^5.2.3",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-eslint-parser": "^6.0.4",
     "vue-template-compiler": "^2.6.10"
   },
   "browserslist": [

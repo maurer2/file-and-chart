@@ -3,7 +3,9 @@
     <thead>
       <tr>
         <template v-for="tableColumn in tableColumns">
-          <th :key="tableColumn">{{ tableColumn | capitalizeFirstLetter }}</th>
+          <th :key="tableColumn">
+            {{ tableColumn | capitalizeFirstLetter }}
+          </th>
         </template>
       </tr>
     </thead>
@@ -22,13 +24,25 @@
 <script>
 export default {
   name: 'Table',
+  filters: {
+    capitalizeFirstLetter(newString) {
+      if (newString === undefined || newString.length === 0) {
+        return '';
+      }
+
+      return `${newString.charAt(0).toUpperCase()}${newString.slice(1)}`;
+    },
+  },
   props: {
-    tableData: Array,
+    tableData: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
       activeEntry: '',
-    }
+    };
   },
   computed: {
     numberOfRows() {
@@ -44,20 +58,11 @@ export default {
     */
     tableColumns() {
       const keysUnique = this.tableData
-        .flatMap((tableRow) => Object.keys(tableRow))
+        .flatMap(tableRow => Object.keys(tableRow))
         .filter((key, index, keysWithDuplicates) => keysWithDuplicates.indexOf(key) === index);
 
       return keysUnique;
-    }
-  },
-  filters: {
-    capitalizeFirstLetter(newString) {
-      if (newString == undefined || newString.length === 0) {
-        return '';
-      }
-
-      return `${newString.charAt(0).toUpperCase()}${newString.slice(1)}`;
-    }
+    },
   },
 };
 </script>

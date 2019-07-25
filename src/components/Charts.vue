@@ -17,25 +17,39 @@ import Chart from 'chart.js';
 export default {
   name: 'Charts',
   props: {
-    chartData: Array,
+    chartData: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
       barChart: undefined,
       circleChart: undefined,
-    }
+    };
   },
   computed: {
     chartLabels() {
-      const names = this.chartData.map((tableRow) => tableRow.name);
+      const names = this.chartData.map(tableRow => tableRow.name);
 
       return names;
     },
     chartValues() {
-      const age = this.chartData.map((tableRow) => tableRow.age);
+      const age = this.chartData.map(tableRow => tableRow.age);
 
       return age;
-    }
+    },
+  },
+  watch: {
+    // watch for prop-change
+    chartData() {
+      this.createBarChart();
+      this.createCircleChart();
+    },
+  },
+  mounted() {
+    this.createBarChart();
+    this.createCircleChart();
   },
   methods: {
     createBarChart() {
@@ -43,10 +57,10 @@ export default {
         type: 'horizontalBar',
         options: {
           legend: {
-            display: false
+            display: false,
           },
           tooltips: {
-            enabled: false
+            enabled: false,
           },
         },
         data: {
@@ -69,7 +83,7 @@ export default {
             display: false,
           },
           tooltips: {
-            enabled: true
+            enabled: true,
           },
         },
         data: {
@@ -82,19 +96,8 @@ export default {
           labels: this.chartLabels,
         },
       });
-    }
+    },
   },
-  watch: {
-    // watch for prop-change
-    chartData() {
-      this.createBarChart();
-      this.createCircleChart();
-    }
-  },
-  mounted() {
-    this.createBarChart();
-    this.createCircleChart();
-  }
 };
 </script>
 
