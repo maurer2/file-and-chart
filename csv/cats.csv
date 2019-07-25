@@ -1,17 +1,17 @@
-name,age
-Bob,1
-Boots,2
-Cat,3
-Felix,4
-Garfield,5
-Kitty,6
-Lilly,7
-Lucky,8
-Mittens,9
-Molly,10
-Muffin,11
-Patches,12
-Snowball,13
-Snuggles,14
-Tinkerbell,15
-Whiskers,16
+"name","age","breed"
+"Bob","1","American Shorthair"
+"Boots","2","Bengal"
+"Cat","3","British Shorthair"
+"Felix","4","European Shorthair"
+"Garfield","5","Japanese Bobtail"
+"Kitty","6","Maine Coon"
+"Lilly","7","Munchkin"
+"Lucky","8","Norwegian Forest cat"
+"Mittens","9","Oriental Shorthair"
+"Molly","10","Persian"
+"Muffin","11","Siamese"
+"Patches","12","Sphynx"
+"Snowball","13","Turkish Angora"
+"Snuggles","14","Russian Blue"
+"Tinkerbell","15","Scottish Fold"
+"Whiskers","16","Chartreux"

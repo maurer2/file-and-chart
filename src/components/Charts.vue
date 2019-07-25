@@ -84,6 +84,13 @@ export default {
       });
     }
   },
+  watch: {
+    // watch for prop-change
+    chartData() {
+      this.createBarChart();
+      this.createCircleChart();
+    }
+  },
   mounted() {
     this.createBarChart();
     this.createCircleChart();

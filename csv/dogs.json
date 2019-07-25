@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Max",
+      "age": 2,
+      "breed": "Bulldog"
+    },
+    {
+      "name": "Buddy",
+      "age": 5,
+      "breed": "Pitbull - Mr. Worldwide"
+    },
+    {
+      "name": "Jack",
+      "age": 1,
+      "breed": "Snoop Dogg"
+    },
+    {
+      "name": "Rocky",
+      "age": 3,
+      "breed": "Golden Retriever"
+    },
+    {
+      "name": "Rex",
+      "age": 2,
+      "breed": "Labrador"
+    },
+    {
+      "name": "Chester",
+      "age": 6,
+      "breed": "German Shepherd"
+    },
+    {
+      "name": "Fenton",
+      "age": 10,
+      "breed": "Pug/Jade"
+    },
+    {
+      "name": "Spike",
+      "age": 8,
+      "breed": "Australian Shepherd"
+    },
+    {
+      "name": "Dog",
+      "age": 9,
+      "breed": "Greyhound"
+    },
+    {
+      "name": "Winston",
+      "age": 7,
+      "breed": "St. Bernard"
+    },
+    {
+      "name": "Benji",
+      "age": 11,
+      "breed": "Labradoodle"
+    },
+    {
+      "name": "Oscar",
+      "age": 12,
+      "breed": "Dobermann"
+    }
+]

@@ -9,25 +9,20 @@
       @change="handleChangeEvent"
     />
     <div class="buttons">
-      <h3>Open Test CSVs</h3>
-      <button class="button" type="button" @click="openCatsCSV">
-        Cats
-      </button>
+      <h3>Test CSVs</h3>
+      <button class="button" type="button" @click="openCatsCSV">Cats</button>
+      <button class="button" type="button" @click="openDogsCSV">Dogs</button>
     </div>
   </form>
 </template>
 
 <script>
 import catsCSV from 'raw-loader!../../csv/cats.csv';
+import dogsCSV from 'raw-loader!../../csv/dogs.csv';
 
 export default {
   name: 'Form',
   props: {},
-  data() {
-    return {
-      test: ''
-    }
-  },
   methods: {
     handleChangeEvent(event) {
       const [file] = event.target.files;
@@ -51,7 +46,10 @@ export default {
     },
     openCatsCSV(){
       this.$emit('fileUpload', catsCSV);
-    }
+    },
+    openDogsCSV(){
+      this.$emit('fileUpload', dogsCSV);
+    },
   },
 };
 </script>

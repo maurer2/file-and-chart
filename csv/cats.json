@@ -1,66 +1,82 @@
 [
     {
       "name": "Bob",
-      "age": 1
+      "age": 1,
+      "breed": "American Shorthair"
     },
     {
       "name": "Boots",
-      "age": 2
+      "age": 2,
+      "breed": "Bengal"
     },
     {
       "name": "Cat",
-      "age": 3
+      "age": 3,
+      "breed": "British Shorthair"
     },
     {
       "name": "Felix",
-      "age": 4
+      "age": 4,
+      "breed": "European Shorthair"
     },
     {
       "name": "Garfield",
-      "age": 5
+      "age": 5,
+      "breed": "Japanese Bobtail"
     },
     {
       "name": "Kitty",
-      "age": 6
+      "age": 6,
+      "breed": "Maine Coon"
     },
     {
       "name": "Lilly",
-      "age": 7
+      "age": 7,
+      "breed": "Munchkin"
     },
     {
       "name": "Lucky",
-      "age": 8
+      "age": 8,
+      "breed": "Norwegian Forest cat"
     },
     {
       "name": "Mittens",
-      "age": 9
+      "age": 9,
+      "breed": "Oriental Shorthair"
     },
     {
       "name": "Molly",
-      "age": 10
+      "age": 10,
+      "breed": "Persian"
     },
     {
       "name": "Muffin",
-      "age": 11
+      "age": 11,
+      "breed": "Siamese"
     },
     {
       "name": "Patches",
-      "age": 12
+      "age": 12,
+      "breed": "Sphynx"
     },
     {
       "name": "Snowball",
-      "age": 13
+      "age": 13,
+      "breed": "Turkish Angora"
     },
     {
       "name": "Snuggles",
-      "age": 14
+      "age": 14,
+      "breed": "Russian Blue"
     },
     {
       "name": "Tinkerbell",
-      "age": 15
+      "age": 15,
+      "breed": "Scottish Fold"
     },
     {
       "name": "Whiskers",
-      "age": 16
+      "age": 16,
+      "breed": "Chartreux"
     }
 ]
