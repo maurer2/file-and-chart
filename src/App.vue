@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <h1 class="title">
       File-and-chart
     </h1>
@@ -91,7 +91,7 @@ body {
 </style>
 
 <style lang="scss" scoped>
-#app {
+.app {
   border: 1px solid black;
   text-align: center;
   color: #2c3e50;

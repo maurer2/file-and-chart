@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App snapshot 1`] = `
+<div id="app" class="app">
+  <h1 class="title">
+    File-and-chart
+  </h1>
+  <section class="section">
+    <h2 class="subtitle">
+      File input
+    </h2>
+    <form-stub></form-stub>
+  </section>
+  <!---->
+  <!---->
+</div>
+`;

@@ -2,6 +2,8 @@
   "name": "file-and-chart",
   "version": "0.1.0",
   "private": true,
+  "author": "Martin",
+  "repository": "https://github.com/maurer2/file-and-chart",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
